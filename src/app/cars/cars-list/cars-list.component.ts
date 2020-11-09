@@ -25,9 +25,8 @@ export class CarsListComponent implements OnInit, AfterViewInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.carForm = this.buildCarForm();
     this.loadCars();
-
+    this.carForm = this.buildCarForm();
   }
 
   buildCarForm() {
@@ -40,7 +39,7 @@ export class CarsListComponent implements OnInit, AfterViewInit {
       color: '',
       power: '',
       clientFirstName: '',
-      clientSurname: '',
+      clientSurName: '',
       cost: '',
       isFullyDamaged: ''
     });

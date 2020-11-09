@@ -59,11 +59,12 @@
 </div>
 <p class="data-header">Add a new car</p>
 <div class="data-container">
-  <form formGroup="carForm">
+  <form [formGroup]="carForm">
     <div class="row form-group">
       <div class="col-sm-4">
         <label>Model</label>
         <input formControlName="model" type="text" class="form-control" placeholder="model">
+        <p *ngIf="!carForm.get('model').valid && carForm.get('model').dirty" class="error">This field is required</p>
       </div>
       <div class="col-sm-4">
         <label>Type</label>
@@ -72,6 +73,7 @@
       <div class="col-sm-4">
         <label>Plate</label>
         <input formControlName="plate" type="text" class="form-control" placeholder="plate">
+        <p *ngIf="!carForm.get('plate').valid && carForm.get('plate').dirty" class="error">This field is required and must contain 3-7 characters</p>
       </div>
 
       <div class="col-sm-4">
@@ -97,7 +99,7 @@
       </div>
       <div class="col-sm-4">
         <label>Surname</label>
-        <input formControlName="clientSurname" type="text" class="form-control" placeholder="surname">
+        <input formControlName="clientSurName" type="text" class="form-control" placeholder="surname">
       </div>
 
       <div class="col-sm-4">
@@ -112,7 +114,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <button type="submit" class="btn btn-primary float-right">Add car</button>
+        <button [disabled]="!carForm.valid" type="submit" class="btn btn-primary float-right">Add car</button>
       </div>
     </div>
   </form>
