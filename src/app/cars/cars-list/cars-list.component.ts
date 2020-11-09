@@ -3,7 +3,7 @@ import {Car} from '../models/car';
 import {TotalCostComponent} from '../total-cost/total-cost.component';
 import {CarsService} from '../cars.service';
 import {Router} from '@angular/router';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -32,15 +32,15 @@ export class CarsListComponent implements OnInit, AfterViewInit {
 
   buildCarForm() {
     return this.formBuilder.group({
-      model: '',
+      model: ['', Validators.required],
       type: '',
-      plate: '',
+      plate: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(7)]],
       deliveryDate: '',
       deadline: '',
       color: '',
       power: '',
       clientFirstName: '',
-      clientSurName: '',
+      clientSurname: '',
       cost: '',
       isFullyDamaged: ''
     });
