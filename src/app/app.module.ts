@@ -10,6 +10,7 @@ import {CoreModule} from './core-module/core.module';
 import {RouterModule} from '@angular/router';
 import {CarsListComponent} from './cars/cars-list/cars-list.component';
 import {CarsRoutingModule} from './cars/cars-routing.module';
+import {SidebarComponent} from './core-module/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
