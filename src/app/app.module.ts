@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {CoreModule} from './core-module/core.module';
 import {RouterModule} from '@angular/router';
 import {CarsListComponent} from './cars/cars-list/cars-list.component';
+import {CarsRoutingModule} from './cars/cars-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,10 @@ import {CarsListComponent} from './cars/cars-list/cars-list.component';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
     CarsModule,
     CoreModule,
-    RouterModule.forRoot([
-      {path: 'cars', component: CarsListComponent}
-    ])
+    AppRoutingModule,
+    CarsRoutingModule
   ],
   providers: [CarsService],
   bootstrap: [AppComponent]
