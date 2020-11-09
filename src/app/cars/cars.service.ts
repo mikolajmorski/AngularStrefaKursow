@@ -20,4 +20,8 @@ export class CarsService {
     return this.http.get<Car>(this.apiUrl + `/${id}`);
   }
 
+  addCar(data): Observable<Car> {
+    return this.http.post<Car>(this.apiUrl, data);
+  }
+
 }

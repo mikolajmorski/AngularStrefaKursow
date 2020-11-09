@@ -8,7 +8,7 @@ export interface Car {
   color: string;
   power: number;
   clientFirstName: string;
-  clientSurName: string;
+  clientSurname: string;
   cost: number;
   isFullyDamaged: boolean;
 }

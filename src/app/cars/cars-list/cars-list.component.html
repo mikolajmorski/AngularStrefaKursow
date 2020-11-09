@@ -94,12 +94,16 @@
         <input formControlName="power" type="text" class="form-control" placeholder="power">
       </div>
       <div class="col-sm-4">
+        <label>Year</label>
+        <input formControlName="year" type="text" class="form-control" placeholder="year">
+      </div>
+      <div class="col-sm-4">
         <label>First name</label>
         <input formControlName="clientFirstName" type="text" class="form-control" placeholder="first name">
       </div>
       <div class="col-sm-4">
         <label>Surname</label>
-        <input formControlName="clientSurName" type="text" class="form-control" placeholder="surname">
+        <input formControlName="clientSurname" type="text" class="form-control" placeholder="surname">
       </div>
 
       <div class="col-sm-4">
@@ -114,7 +118,8 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <button [disabled]="!carForm.valid" type="submit" class="btn btn-primary float-right">Add car</button>
+        <button [disabled]="!carForm.valid" type="submit" (click)="addCar()" class="btn btn-primary float-right">Add car</button>
+        <button type="submit" (click)="carForm.reset()" class="btn btn-default float-right">Reset</button>
       </div>
     </div>
   </form>

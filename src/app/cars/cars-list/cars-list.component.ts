@@ -39,9 +39,10 @@ export class CarsListComponent implements OnInit, AfterViewInit {
       color: '',
       power: '',
       clientFirstName: '',
-      clientSurName: '',
+      clientSurname: '',
       cost: '',
-      isFullyDamaged: ''
+      isFullyDamaged: '',
+      year: ''
     });
   }
 
@@ -49,6 +50,12 @@ export class CarsListComponent implements OnInit, AfterViewInit {
     this.carsService.getCars().subscribe((cars) => {
       this.cars = cars;
       this.countTotalCost();
+    });
+  }
+
+  addCar() {
+    this.carsService.addCar(this.carForm.value).subscribe(() =>{
+      this.loadCars();
     });
   }
 
