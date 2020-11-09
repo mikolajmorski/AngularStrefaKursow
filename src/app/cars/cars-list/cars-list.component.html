@@ -22,7 +22,7 @@
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let car of cars; let i = index" class="row-car" [routerLink]="['/cars', car.id]">
+          <tr *ngFor="let car of cars; let i = index" class="row-car" (click)="goToCarDetails(car)" >
             <td [ngClass]="{'row-error': car.isFullyDamaged}"> {{ car?.model }}</td>
             <td> {{ car?.plate }}</td>
             <td> {{ car?.deliveryDate }}</td>
