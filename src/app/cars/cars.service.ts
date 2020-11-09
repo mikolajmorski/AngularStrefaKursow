@@ -24,4 +24,8 @@ export class CarsService {
     return this.http.post<Car>(this.apiUrl, data);
   }
 
+  updateCar(id: number, data): Observable<Car> {
+    return this.http.put<Car>(this.apiUrl + `/${id}`, data);
+  }
+
 }
