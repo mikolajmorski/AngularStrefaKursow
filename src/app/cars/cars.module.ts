@@ -5,6 +5,7 @@ import { TotalCostComponent } from './total-cost/total-cost.component';
 import {SharedModule} from '../shared-module/shared.module';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import {RouterModule} from '@angular/router';
+import {CarResolve} from './car-resolve-service';
 
 
 
@@ -15,6 +16,7 @@ import {RouterModule} from '@angular/router';
     RouterModule
   ],
   exports: [CarsListComponent],
+  providers: [CarResolve],
   declarations: [CarsListComponent, TotalCostComponent, CarDetailsComponent]
 })
 export class CarsModule { }
