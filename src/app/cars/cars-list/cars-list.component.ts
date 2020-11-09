@@ -3,6 +3,7 @@ import {Car} from '../models/car';
 import {TotalCostComponent} from '../total-cost/total-cost.component';
 import {CarsService} from '../cars.service';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -17,10 +18,32 @@ export class CarsListComponent implements OnInit, AfterViewInit {
   totalCost: number;
   grossCost: number;
   cars: Car[];
-  constructor(private carsService: CarsService, private router: Router) { }
+  carForm: FormGroup;
+
+  constructor(private carsService: CarsService,
+              private formBuilder: FormBuilder,
+              private router: Router) { }
 
   ngOnInit(): void {
+    this.carForm = this.buildCarForm();
     this.loadCars();
+
+  }
+
+  buildCarForm() {
+    return this.formBuilder.group({
+      model: '',
+      type: '',
+      plate: '',
+      deliveryDate: '',
+      deadline: '',
+      color: '',
+      power: '',
+      clientFirstName: '',
+      clientSurName: '',
+      cost: '',
+      isFullyDamaged: ''
+    });
   }
 
   loadCars(): void {

@@ -6,6 +6,7 @@ import {SharedModule} from '../shared-module/shared.module';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import {RouterModule} from '@angular/router';
 import {CarResolve} from './car-resolve-service';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import {CarResolve} from './car-resolve-service';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [CarsListComponent],
   providers: [CarResolve],
