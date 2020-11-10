@@ -28,4 +28,7 @@ export class CarsService {
     return this.http.put<Car>(this.apiUrl + `/${id}`, data);
   }
 
+  removeCar(id: number): Observable<Car> {
+    return this.http.delete<Car>(this.apiUrl + `/${id}`);
+  }
 }
