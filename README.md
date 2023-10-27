@@ -1,4 +1,12 @@
-# AngularStrefaKursow
+# Angular Strefa Kursow
+
+Angular application for Strefa Kursów
+
+https://strefakursow.pl/kursy/programowanie/kurs_angular_4_-_od_podstaw.html
+
+Finished at 10 November 2020
+[AngularStrefaKursow.pdf](https://github.com/mikolajmorski/AngularStrefaKursow/files/13188245/AngularStrefaKursow.pdf)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
